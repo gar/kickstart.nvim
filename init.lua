@@ -730,6 +730,11 @@ require('lazy').setup({
             },
           },
         },
+        lexical = {
+          cmd = { '/Users/gar.morley/lexical/_build/dev/package/lexical/bin/start_lexical.sh' },
+          filetypes = { 'elixir', 'eelixir', 'heex', 'surface' },
+          settings = {},
+        },
       }
 
       -- Ensure the servers and tools above are installed
