@@ -306,6 +306,14 @@ require('lazy').setup({
   -- Then, because we use the `opts` key (recommended), the configuration runs
   -- after the plugin has been loaded as `require(MODULE).setup(opts)`.
 
+  -- Projectionist, for dealing with alternate files
+  {
+    'tpope/vim-projectionist',
+    config = function()
+      vim.keymap.set('n', '<leader>a', ':A<CR>', { desc = '[A]lternate File', noremap = true, silent = true })
+    end,
+  },
+
   { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
