@@ -471,6 +471,22 @@ require('lazy').setup({
         }
       end, { desc = '[S]earch [/] in Open Files' })
 
+      -- shorcut for finding lib files
+      vim.api.nvim_set_keymap(
+        'n',
+        '<leader>sl',
+        ":lua require('telescope.builtin').find_files({ search_dirs = { 'lib' } })<CR>",
+        { noremap = true, silent = true }
+      )
+
+      -- shorcut for finding test files
+      vim.api.nvim_set_keymap(
+        'n',
+        '<leader>st',
+        ":lua require('telescope.builtin').find_files({ search_dirs = { 'test' } })<CR>",
+        { noremap = true, silent = true }
+      )
+
       -- Shortcut for searching your Neovim configuration files
       vim.keymap.set('n', '<leader>sn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
